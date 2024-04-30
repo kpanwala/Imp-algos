@@ -16,16 +16,16 @@ class QuickSort {
     
     static int partition(int [] arr, int l, int h){
         int pivot = arr[l];
-        int i=l-1,j=h;
+        int i=l,j=h;
         
         while(i<j){
-            do{
+            while(i<h && arr[i]<=pivot){
                 i++;
-            }while(i<h && arr[i]<=pivot);
+            }
             
-            do{
+            while(j>l && arr[j]>pivot){
                 j--;
-            }while(j>l && arr[j]>pivot);
+            }
             
             if(i<j){
                 swap(arr,i,j);
@@ -44,7 +44,7 @@ class QuickSort {
     
     public static void main(String[] args) {
         int arr[]={10, 7, 8, 9, 1, 5};
-        quickSort(arr,0,arr.length);
+        quickSort(arr,0,arr.length-1);
         Arrays.stream(arr).forEach(str->System.out.print(str+" "));
     }
 }
