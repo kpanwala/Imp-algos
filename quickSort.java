@@ -19,11 +19,11 @@ class QuickSort {
         int i=l,j=h;
         
         while(i<j){
-            while(i<h && arr[i]<=pivot){
+            while(i<=j && arr[i]<=pivot){
                 i++;
             }
             
-            while(j>l && arr[j]>pivot){
+            while(j>=i && arr[j]>pivot){
                 j--;
             }
             
